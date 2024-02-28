@@ -16,10 +16,9 @@ export default {
   components: { 
     ToDoItem,
   },
-  props: {
-    todos: {
-      type: Array,
-      required: true,
+  computed: {
+    todos() {
+      return this.$store.state.todos;
     }
   },
   methods: {

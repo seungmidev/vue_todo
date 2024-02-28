@@ -1,13 +1,10 @@
 <template>
   <div id="app" class="container">
     <h1 class="text-center">ToDo App</h1>
-    <completed-to-do :todos="todos" />
-    <add-to-do @add-todo="addTodo" />
+    <completed-to-do />
+    <add-to-do />
     <hr>
-    <to-do-list 
-      :todos="todos"
-      @toogle-checkbox="toggleCheckbox"
-      @click-delete="deleteTodo" />
+    <to-do-list />
   </div>
 </template>
 
@@ -25,33 +22,33 @@ export default {
   data() {
     return {
       todoText: '',
-      todos: [
-        { id: 1, text: 'Add a todo to get started', checked: false },
-      ]
+      // todos: [
+      //   { id: 1, text: 'Add a todo to get started', checked: false },
+      // ]
     }
   },
   methods: {
-    addTodo(value) {
-      this.todos.push({
-        id: Math.random(),
-        text: value,
-        checked: false,
-      });
-      this.todoText = '';
-    },
-    toggleCheckbox({ id, checked }) {
-      const index = this.todos.findIndex(todo => {
-        return todo.id === id;
-      });
-      this.todos[index].checked = checked;
-    },
-    deleteTodo(id) {
-      const index = this.todos.findIndex(todo => {
-        return todo.id === id;
-      });
-      this.todos.splice(index, 1); 
-      //this.todos = this.todos.filter(todo => todo.id !== id);
-    }
+    // addTodo(value) {
+    //   this.todos.push({
+    //     id: Math.random(),
+    //     text: value,
+    //     checked: false,
+    //   });
+    //   this.todoText = '';
+    // },
+    // toggleCheckbox({ id, checked }) {
+    //   const index = this.todos.findIndex(todo => {
+    //     return todo.id === id;
+    //   });
+    //   this.todos[index].checked = checked;
+    // },
+    // deleteTodo(id) {
+    //   const index = this.todos.findIndex(todo => {
+    //     return todo.id === id;
+    //   });
+    //   this.todos.splice(index, 1); 
+    //   //this.todos = this.todos.filter(todo => todo.id !== id);
+    // }
   }
 }
 </script>
