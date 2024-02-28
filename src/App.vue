@@ -5,6 +5,8 @@
     <add-to-do />
     <hr>
     <to-do-list />
+    <hr>
+    <user-list />
   </div>
 </template>
 
@@ -12,12 +14,14 @@
 import AddToDo from './components/AddToDo.vue';
 import CompletedToDo from './components/CompletedToDo.vue';
 import ToDoList from './components/ToDoList.vue';
+import UserList from './components/UserList.vue';
 
 export default {
   components: { 
     ToDoList,
     AddToDo,
     CompletedToDo,
+    UserList,
   },
   data() {
     return {

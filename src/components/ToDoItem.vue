@@ -29,10 +29,16 @@ export default {
   },
   methods: {
     toggleCheckbox(e) {
-      this.$store.commit('TOGGLE_TODO', {
+      this.$store.dispatch('toggleTodo', {
         id: this.todo.id, 
         checked: e.target.checked
       });
+
+      // this.$store.commit('TOGGLE_TODO', {
+      //   id: this.todo.id, 
+      //   checked: e.target.checked
+      // });
+
       // this.$emit('toogle-checkbox', {
       //   id: this.todo.id,
       //   checked: e.target.checked,
