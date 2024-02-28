@@ -60,7 +60,9 @@ export default new Vuex.Store({
       }, 500);
     },
   },
-  getters: { // Computed
-
+  getters: { // Computed, Can reuse the values in components
+    numberOfCompletedTodo: state => {
+      return state.todos.filter(todo => todo.checked).length;
+    },
   }
 });

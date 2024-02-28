@@ -9,6 +9,7 @@
 
 <script>
 //import axios from 'axios';
+import { mapState, mapActions } from 'vuex';
 
 export default {
   data() {
@@ -20,17 +21,23 @@ export default {
     this.getUsers();
   },
   computed: {
-    users() {
-      return this.$store.state.users;
-    }
+    ...mapState([ // It's the same to users()
+      'users',
+    ]),
+    // users() {
+    //   return this.$store.state.users;
+    // }
   },  
   methods: {
-    getUsers() {
-      this.$store.dispatch('getUsers');
-      // axios.get('https://jsonplaceholder.typicode.com/users').then(res => {
-      //   this.users = res.data;
-      // });
-    },
+    ...mapActions([ // It's the same to getUsers()
+      'getUsers',
+    ]),
+    // getUsers() {
+    //   this.$store.dispatch('getUsers');
+    //   // axios.get('https://jsonplaceholder.typicode.com/users').then(res => {
+    //   //   this.users = res.data;
+    //   // });
+    // },
   }
 }
 </script>
