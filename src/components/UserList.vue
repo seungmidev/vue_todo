@@ -21,17 +21,13 @@ export default {
     this.getUsers();
   },
   computed: {
-    ...mapState([ // It's the same to users()
-      'users',
-    ]),
+    ...mapState('user', ['users']), // It's the same to users()
     // users() {
     //   return this.$store.state.users;
     // }
   },  
   methods: {
-    ...mapActions([ // It's the same to getUsers()
-      'getUsers',
-    ]),
+    ...mapActions('user',['getUsers',]),// It's the same to getUsers()
     // getUsers() {
     //   this.$store.dispatch('getUsers');
     //   // axios.get('https://jsonplaceholder.typicode.com/users').then(res => {
